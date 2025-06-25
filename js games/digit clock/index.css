@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    border: 0cm;
+}
+
+body{
+    background: url(background\ -study.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#clock-con{
+    font-size: 6em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    backdrop-filter: blur(5px);
+    align-content: center;
+    border: black 2px solid;
+    border-radius: 30px;
+}

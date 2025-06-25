@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissor</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        #result {
+            color: black;
+        }
+      .win {
+            color: green;
+        }
+      .lose {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Rock-Paper-Scissor</h1>
+
+    <div class="choices">
+        <button id="rock" onclick="play('rock')">✊</button>
+        <button id="paper" onclick="play('paper')">🖐️</button>
+        <button id="scissor" onclick="play('scissor')">✌️</button>
+    </div>
+
+    <div id="playerChoice" >player:</div>
+    <div id="computerChoice" >computer:</div>
+    <div id="result" >result</div>
+    <div id="playerScore" >player score:</div>
+    <div id="computerScore" >computer score:</div>
+
+    <script>
+        let playerScore = 0;
+        let computerScore = 0;
+
+        function play(playerChoice) {
+            const choices = ["rock", "paper", "scissor"];
+            const computerChoice = choices[Math.floor(Math.random() * 3)];
+            let result = "";
+
+            if (playerChoice === computerChoice) {
+                result = "IT'S A TIE";
+            } else {
+                switch (playerChoice) {
+                    case "rock":
+                        result = (computerChoice === "scissor")? "YOU WIN" : "YOU LOSE";
+                        break;
+                    case "paper":
+                        result = (computerChoice === "rock")? "YOU WIN" : "YOU LOSE";
+                        break;
+                    case "scissor":
+                        result = (computerChoice === "paper")? "YOU WIN" : "YOU LOSE";
+                        break;
+                }
+            }
+
+            if (result === "YOU WIN") {
+                playerScore++;
+            } else if (result === "YOU LOSE") {
+                computerScore++;
+            }
+
+            document.getElementById("playerChoice").textContent = `PLAYER : ${playerChoice}`;
+            document.getElementById("computerChoice").textContent = `COMPUTER : ${computerChoice}`;
+            document.getElementById("result").textContent = result;
+            document.getElementById("result").className = result === "YOU WIN"? "win" : result === "YOU LOSE"? "lose" : "";
+            document.getElementById("playerScore").textContent = `PLAYER SCORE: ${playerScore}`;
+            document.getElementById("computerScore").textContent = `COMPUTER SCORE: ${computerScore}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(203, 216, 203);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#myH1{
+    font-size: 4em;
+    font-family: serif;
+    color: rgb(0, 0, 0);
+}
+
+.general{
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size:  6em;
+    font-family: monospace;
+    font-weight: bold;
+    color: aliceblue;
+    border: solid 3px black;
+    padding:  30px;
+    border-radius:  10px;
+}
+
+#button{
+    color: black;
+
+}
+
+button{
+    font-size: 2rem;
+    padding: 10px 20px;
+    border: 5px black solid;
+    border-radius:  15px;
+    background-color: grey;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: hsl(0, 0%, 60%);
+}
+
+button:active{
+    background-color: hsl(0, 0%, 70%);
+}
+
